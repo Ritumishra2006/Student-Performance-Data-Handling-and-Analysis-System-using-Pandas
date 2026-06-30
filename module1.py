@@ -1,44 +1,26 @@
+#Data Loading
+
 import pandas as pd
 
-# 1. Ingest (Load Data)
-
+# Read the CSV file
 df = pd.read_csv("student_dataset_v2.csv")   
 
-print("First 10 Rows:")
-print(df.head(10))
+# Display the first five records
+print("First Five Records:")
+print(df.head())
 
-print("\nLast 5 Rows:")
-print(df.tail(5))
+# Display the last five records
+print("\nLast Five Records:")
+print(df.tail())
 
-# 2. Understand Data
-
+# Print the shape of the dataset
 print("\nShape of Dataset:")
 print(df.shape)
 
+# Print column names
 print("\nColumn Names:")
 print(df.columns)
 
-print("\nData Types:")
+# Display data types of each column
+print("\nData Types of Each Column:")
 print(df.dtypes)
-
-
-# 3. Data Cleaning
-
-print("\nMissing Values:")
-print(df.isnull().sum())
-
-# Fill missing values in Marks column with mean
-
-marks_mean = df["Marks"].mean()
-df["Marks"] = df["Marks"].fillna(marks_mean)
-
-print("\nMissing Values After Filling:")
-print(df.isnull().sum())
-
-# 4. Basic Analysis
-
-print("\nHighest Attendance:")
-print(df["Attendance"].max())
-
-print("\nAverage Study Hours:")
-print(df["StudyHours"].mean())
